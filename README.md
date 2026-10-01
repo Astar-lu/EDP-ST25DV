@@ -1,0 +1,2 @@
+# EDP-ST25DV
+NFC-EDP
