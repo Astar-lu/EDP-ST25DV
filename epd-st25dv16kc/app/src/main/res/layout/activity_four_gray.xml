@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="16dp"
+        tools:context=".FourGrayActivity">
+
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择图片并转为200×200四色"
+            app:layout_constraintTop_toBottomOf="@id/ivPreview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="16dp"/>
+
+        <Button
+            android:id="@+id/btnNfcSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NFC下发ST25DV16KC(带ACK)"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:maxHeight="300dp"
+            android:scrollbars="vertical"
+            android:text="等待操作"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnNfcSend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

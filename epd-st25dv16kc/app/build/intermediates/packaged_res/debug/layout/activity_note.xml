@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+                                                       
+                                                   
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" android:tag="layout/activity_note_0" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/etNote"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="输入要显示在墨水屏上的文字"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:maxLines="6"
+                android:gravity="top|start" />
+
+            <Button
+                android:id="@+id/btnGenerate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="生成预览"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/ivPreview"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center_horizontal"
+                android:scaleType="fitCenter"
+                android:background="#EEEEEE"
+                android:layout_marginTop="12dp" />
+
+            <Button
+                android:id="@+id/btnNfcSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="NFC下发ST25DV16KC"
+                android:layout_marginTop="12dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxHeight="250dp"
+                android:scrollbars="vertical"
+                android:text="等待操作"
+                android:textSize="13sp"
+                android:fontFamily="monospace"
+                android:padding="8dp"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </ScrollView>
+         

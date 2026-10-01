@@ -1,0 +1,152 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.epd.st25dv16kc"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="34" />
+10
+11    <uses-permission android:name="android.permission.NFC" />
+11-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:4:5-62
+11-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:4:22-59
+12
+13    <uses-feature
+13-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:5:5-82
+14        android:name="android.hardware.nfc"
+14-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:5:19-54
+15        android:required="false" />
+15-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:5:55-79
+16
+17    <permission
+17-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+18        android:name="com.epd.st25dv16kc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION"
+18-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+19        android:protectionLevel="signature" />
+19-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+20
+21    <uses-permission android:name="com.epd.st25dv16kc.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION" />
+21-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+21-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+22
+23    <application
+23-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:7:5-30:19
+24        android:allowBackup="true"
+24-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:8:9-35
+25        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+25-->[androidx.core:core:1.12.0] /home/codespace/.gradle/caches/transforms-3/8775ed491970576126584cf24be3fe11/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+26        android:debuggable="true"
+27        android:extractNativeLibs="true"
+28        android:icon="@android:drawable/ic_menu_info_details"
+28-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:9:9-62
+29        android:label="@string/app_name"
+29-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:10:9-41
+30        android:supportsRtl="true"
+30-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:11:9-35
+31        android:theme="@style/AppTheme" >
+31-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:12:9-40
+32        <activity
+32-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:14:9-21:20
+33            android:name="com.epd.st25dv16kc.MainActivity"
+33-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:15:13-41
+34            android:exported="true" >
+34-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:16:13-36
+35            <intent-filter>
+35-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:17:13-20:29
+36                <action android:name="android.intent.action.MAIN" />
+36-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:18:17-69
+36-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:18:25-66
+37
+38                <category android:name="android.intent.category.LAUNCHER" />
+38-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:19:17-77
+38-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:19:27-74
+39            </intent-filter>
+40        </activity>
+41        <activity android:name="com.epd.st25dv16kc.FourGrayActivity" />
+41-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:23:9-54
+41-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:23:19-51
+42        <activity android:name="com.epd.st25dv16kc.GrayScaleActivity" />
+42-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:24:9-55
+42-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:24:19-52
+43        <activity android:name="com.epd.st25dv16kc.QrCodeActivity" />
+43-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:25:9-52
+43-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:25:19-49
+44        <activity android:name="com.epd.st25dv16kc.BinaryActivity" />
+44-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:26:9-52
+44-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:26:19-49
+45        <activity android:name="com.epd.st25dv16kc.NoteActivity" />
+45-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:27:9-50
+45-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:27:19-47
+46        <activity android:name="com.epd.st25dv16kc.CartoonActivity" />
+46-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:28:9-53
+46-->/workspaces/EDP-ST25DV/epd-st25dv16kc/app/src/main/AndroidManifest.xml:28:19-50
+47
+48        <provider
+48-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:24:9-32:20
+49            android:name="androidx.startup.InitializationProvider"
+49-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:25:13-67
+50            android:authorities="com.epd.st25dv16kc.androidx-startup"
+50-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:26:13-68
+51            android:exported="false" >
+51-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:27:13-37
+52            <meta-data
+52-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:29:13-31:52
+53                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+53-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:30:17-75
+54                android:value="androidx.startup" />
+54-->[androidx.emoji2:emoji2:1.2.0] /home/codespace/.gradle/caches/transforms-3/fab8b75b7e9679982a94051180e1a35f/transformed/jetified-emoji2-1.2.0/AndroidManifest.xml:31:17-49
+55            <meta-data
+55-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/codespace/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:29:13-31:52
+56                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+56-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/codespace/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:30:17-78
+57                android:value="androidx.startup" />
+57-->[androidx.lifecycle:lifecycle-process:2.6.1] /home/codespace/.gradle/caches/transforms-3/2419007326b66f9827b3634ef3e657e6/transformed/jetified-lifecycle-process-2.6.1/AndroidManifest.xml:31:17-49
+58            <meta-data
+58-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:29:13-31:52
+59                android:name="androidx.profileinstaller.ProfileInstallerInitializer"
+59-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:30:17-85
+60                android:value="androidx.startup" />
+60-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:31:17-49
+61        </provider>
+62
+63        <receiver
+63-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:34:9-52:20
+64            android:name="androidx.profileinstaller.ProfileInstallReceiver"
+64-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:35:13-76
+65            android:directBootAware="false"
+65-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:36:13-44
+66            android:enabled="true"
+66-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:37:13-35
+67            android:exported="true"
+67-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:38:13-36
+68            android:permission="android.permission.DUMP" >
+68-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:39:13-57
+69            <intent-filter>
+69-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:40:13-42:29
+70                <action android:name="androidx.profileinstaller.action.INSTALL_PROFILE" />
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:17-91
+70-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:41:25-88
+71            </intent-filter>
+72            <intent-filter>
+72-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:43:13-45:29
+73                <action android:name="androidx.profileinstaller.action.SKIP_FILE" />
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:17-85
+73-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:44:25-82
+74            </intent-filter>
+75            <intent-filter>
+75-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:46:13-48:29
+76                <action android:name="androidx.profileinstaller.action.SAVE_PROFILE" />
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:17-88
+76-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:47:25-85
+77            </intent-filter>
+78            <intent-filter>
+78-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:49:13-51:29
+79                <action android:name="androidx.profileinstaller.action.BENCHMARK_OPERATION" />
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:17-95
+79-->[androidx.profileinstaller:profileinstaller:1.3.0] /home/codespace/.gradle/caches/transforms-3/d652cbb5b9f56b84046055b1f667c7db/transformed/jetified-profileinstaller-1.3.0/AndroidManifest.xml:50:25-92
+80            </intent-filter>
+81        </receiver>
+82    </application>
+83
+84</manifest>

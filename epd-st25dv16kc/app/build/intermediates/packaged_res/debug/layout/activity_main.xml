@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF8E7"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择算法"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp" />
+
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:columnCount="2"
+            android:rowCount="4">
+
+            <!-- 二值化 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardBinary">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_crop" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二值化"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 模拟灰度 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardGray">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_gallery" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="模拟灰度"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 四级灰度 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardFourGray">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="四级灰度"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 卡通风格 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardCartoon">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_gallery" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卡通风格"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 二维码 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardQr">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_view" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="二维码"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+            <!-- 记事本 -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
+                android:layout_margin="6dp"
+                android:background="@android:color/white"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:id="@+id/cardNote">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:src="@android:drawable/ic_menu_agenda" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="记事本"
+                    android:textSize="14sp"
+                    android:layout_marginTop="8dp" />
+            </LinearLayout>
+
+        </GridLayout>
+
+    </LinearLayout>
+</ScrollView>
