@@ -4,12 +4,28 @@
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_binary.xml"
     },
     {
-        "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_gray_scale.xml",
-        "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
-    },
-    {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_four_gray.xml",
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_four_gray.xml"
+    },
+    {
+        "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_four_gray.xml",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_four_gray.xml"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_cartoon.xml",
+        "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_cartoon.xml"
+    },
+    {
+        "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_cartoon.xml",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_cartoon.xml"
+    },
+    {
+        "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_gray_scale.xml",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_gray_scale.xml",
+        "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
     },
     {
         "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_note.xml",
@@ -20,16 +36,12 @@
         "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_qr_code.xml"
     },
     {
-        "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_cartoon.xml",
-        "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_cartoon.xml"
+        "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_binary.xml",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_binary.xml"
     },
     {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_note.xml",
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_note.xml"
-    },
-    {
-        "merged": "com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_gray_scale.xml",
-        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
     },
     {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-mergeDebugResources-34:/layout/activity_qr_code.xml",

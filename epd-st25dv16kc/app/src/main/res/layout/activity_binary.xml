@@ -33,7 +33,7 @@
                 android:id="@+id/btnNfcSend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NFC下发"
+                android:text="NFC下发至墨水屏"
                 android:layout_marginTop="8dp" />
 
             <TextView
