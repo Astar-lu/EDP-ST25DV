@@ -3,6 +3,7 @@ package com.epd.st25dv16kc
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -14,7 +15,6 @@ class BinaryActivity : AppCompatActivity() {
     private lateinit var nfcSender: NfcSender
     private var processedBitmap: Bitmap? = null
     private val logBuffer = StringBuilder()
-
     private lateinit var pickImageLauncher: androidx.activity.result.ActivityResultLauncher<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,10 +45,7 @@ class BinaryActivity : AppCompatActivity() {
             logBuffer.setLength(0)
             if (nfcSender.currentTag != null && !nfcSender.isSending) {
                 nfcSender.sendBitmap(bitmapToBuffer(bmp)) {}
-            } else {
-                logToUI("请贴近NFC标签")
-                nfcSender.currentTag?.let { nfcSender.sendBitmap(bitmapToBuffer(bmp)) {} }
-            }
+            } else { logToUI("请贴近NFC标签") }
         }
     }
 
@@ -65,7 +62,8 @@ class BinaryActivity : AppCompatActivity() {
             val gray = (Color.red(c) * 0.299 + Color.green(c) * 0.587 + Color.blue(c) * 0.114).toInt()
             out.setPixel(x, y, if (gray > 128) Color.WHITE else Color.BLACK)
         }
-        return out
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {

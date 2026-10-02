@@ -3,6 +3,7 @@ package com.epd.st25dv16kc
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -41,10 +42,7 @@ class CartoonActivity : AppCompatActivity() {
             override fun onProgressChanged(sb: android.widget.SeekBar?, v: Int, f: Boolean) { edgeStrength = v + 10 }
             override fun onStartTrackingTouch(sb: android.widget.SeekBar?) {}
             override fun onStopTrackingTouch(sb: android.widget.SeekBar?) {
-                processedBitmap?.let {
-                    // 重新处理需要原图，这里简化：提示重新选图
-                    logToUI("描边强度=$edgeStrength，重新选图生效")
-                }
+                logToUI("描边强度=$edgeStrength，重新选图生效")
             }
         })
 
@@ -68,7 +66,6 @@ class CartoonActivity : AppCompatActivity() {
 
     private fun cartoonize(src: Bitmap, threshold: Int): Bitmap {
         val w = 200; val h = 200
-        // 3x3 平均平滑
         val smooth = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
         for (y in 0 until h) for (x in 0 until w) {
             var r = 0; var g = 0; var b = 0; var cnt = 0
@@ -80,7 +77,6 @@ class CartoonActivity : AppCompatActivity() {
             }
             smooth.setPixel(x, y, Color.rgb(r / cnt, g / cnt, b / cnt))
         }
-        // 边缘检测 + 四色量化
         val out = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888)
         for (y in 0 until h) for (x in 0 until w) {
             val c = smooth.getPixel(x, y)
@@ -98,15 +94,17 @@ class CartoonActivity : AppCompatActivity() {
             }
             out.setPixel(x, y, color)
         }
-        return out
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {
         val buf = ByteArray(NfcSender.FRAME_TOTAL_BYTE)
         var idx = 0; var bit = 6
         for (y in 0 until 200) for (x in 0 until 200) {
-            val px = bmp.getPixel(x, y)
-            val code = when (px) { Color.BLACK -> 0; Color.WHITE -> 1; Color.YELLOW -> 2; Color.RED -> 3; else -> 0 }
+            val code = when (bmp.getPixel(x, y)) {
+                Color.BLACK -> 0; Color.WHITE -> 1; Color.YELLOW -> 2; Color.RED -> 3; else -> 0
+            }
             buf[idx] = (buf[idx].toInt() or (code shl bit)).toByte()
             bit -= 2; if (bit < 0) { bit = 6; idx++ }
         }

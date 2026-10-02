@@ -3,6 +3,7 @@ package com.epd.st25dv16kc
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -14,7 +15,6 @@ class FourGrayActivity : AppCompatActivity() {
     private lateinit var nfcSender: NfcSender
     private var processedBitmap: Bitmap? = null
     private val logBuffer = StringBuilder()
-
     private lateinit var pickImageLauncher: androidx.activity.result.ActivityResultLauncher<String>
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +24,7 @@ class FourGrayActivity : AppCompatActivity() {
         binding.tvStatus.movementMethod = android.text.method.ScrollingMovementMethod()
         nfcSender = NfcSender(this) { logToUI(it) }
 
-        pickImageLauncher = registerForActivityResult(
-            ActivityResultContracts.GetContent()
-        ) { uri ->
+        pickImageLauncher = registerForActivityResult(ActivityResultContracts.GetContent()) { uri ->
             uri?.let {
                 try {
                     val src = BitmapFactory.decodeStream(contentResolver.openInputStream(it))
@@ -42,75 +40,51 @@ class FourGrayActivity : AppCompatActivity() {
         }
 
         binding.btnSelectImage.setOnClickListener { pickImageLauncher.launch("image/*") }
-
         binding.btnNfcSend.setOnClickListener {
             val bmp = processedBitmap
-            if (bmp == null) {
-                Toast.makeText(this, "请先选择图片", Toast.LENGTH_SHORT).show()
-                return@setOnClickListener
-            }
-            if (!nfcSender.isNfcReady()) {
-                nfcSender.openNfcSettings()
-                return@setOnClickListener
-            }
+            if (bmp == null) { Toast.makeText(this, "请先选择图片", Toast.LENGTH_SHORT).show(); return@setOnClickListener }
+            if (!nfcSender.isNfcReady()) { nfcSender.openNfcSettings(); return@setOnClickListener }
             logBuffer.setLength(0)
             if (nfcSender.currentTag != null && !nfcSender.isSending) {
                 nfcSender.sendBitmap(bitmapToBuffer(bmp)) {}
-            } else {
-                logToUI("请贴近NFC标签（华为天线在背面顶部）")
-            }
+            } else { logToUI("请贴近NFC标签") }
         }
     }
 
     private fun logToUI(msg: String) {
         logBuffer.append(msg).append("\n")
         val lines = logBuffer.toString().split("\n")
-        val recent = if (lines.size > 40) lines.takeLast(40).joinToString("\n") else logBuffer.toString()
-        runOnUiThread { binding.tvStatus.text = recent }
+        runOnUiThread { binding.tvStatus.text = if (lines.size > 40) lines.takeLast(40).joinToString("\n") else logBuffer.toString() }
     }
 
     private fun quantizeTo4Color(src: Bitmap): Bitmap {
         val out = Bitmap.createBitmap(200, 200, Bitmap.Config.ARGB_8888)
-        for (y in 0 until 200) {
-            for (x in 0 until 200) {
-                val c = src.getPixel(x, y)
-                val gray = (Color.red(c) * 0.299 + Color.green(c) * 0.587 + Color.blue(c) * 0.114).toInt()
-                out.setPixel(x, y, when {
-                    gray > 220 -> Color.WHITE
-                    gray > 160 -> Color.YELLOW
-                    gray > 80 -> Color.RED
-                    else -> Color.BLACK
-                })
-            }
+        for (y in 0 until 200) for (x in 0 until 200) {
+            val c = src.getPixel(x, y)
+            val gray = (Color.red(c) * 0.299 + Color.green(c) * 0.587 + Color.blue(c) * 0.114).toInt()
+            out.setPixel(x, y, when {
+                gray > 220 -> Color.WHITE; gray > 160 -> Color.YELLOW; gray > 80 -> Color.RED; else -> Color.BLACK
+            })
         }
-        return out
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {
         val buf = ByteArray(NfcSender.FRAME_TOTAL_BYTE)
-        var idx = 0
-        var bit = 6
-        for (y in 0 until 200) {
-            for (x in 0 until 200) {
-                val px = bmp.getPixel(x, y)
-                val code = when (px) {
-                    Color.BLACK -> 0
-                    Color.WHITE -> 1
-                    Color.YELLOW -> 2
-                    Color.RED -> 3
-                    else -> 0
-                }
-                buf[idx] = (buf[idx].toInt() or (code shl bit)).toByte()
-                bit -= 2
-                if (bit < 0) { bit = 6; idx++ }
+        var idx = 0; var bit = 6
+        for (y in 0 until 200) for (x in 0 until 200) {
+            val code = when (bmp.getPixel(x, y)) {
+                Color.BLACK -> 0; Color.WHITE -> 1; Color.YELLOW -> 2; Color.RED -> 3; else -> 0
             }
+            buf[idx] = (buf[idx].toInt() or (code shl bit)).toByte()
+            bit -= 2; if (bit < 0) { bit = 6; idx++ }
         }
         return buf
     }
 
     override fun onResume() { super.onResume(); nfcSender.onResume() }
     override fun onPause() { super.onPause(); nfcSender.onPause() }
-
     override fun onNewIntent(intent: android.content.Intent?) {
         super.onNewIntent(intent)
         if (nfcSender.onNewIntent(intent)) {

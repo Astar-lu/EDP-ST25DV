@@ -3,6 +3,7 @@ package com.epd.st25dv16kc
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.graphics.Color
+import android.graphics.Matrix
 import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
@@ -13,7 +14,7 @@ class GrayScaleActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGrayScaleBinding
     private lateinit var nfcSender: NfcSender
     private var processedBitmap: Bitmap? = null
-    private var useColor = true // true=四色抖动, false=黑白抖动
+    private var useColor = true
     private val logBuffer = StringBuilder()
     private lateinit var pickImageLauncher: androidx.activity.result.ActivityResultLauncher<String>
 
@@ -37,7 +38,6 @@ class GrayScaleActivity : AppCompatActivity() {
             }
         }
 
-        binding.btnSelectImage.setOnClickListener { pickImageLauncher.launch("image/*") }
         binding.toggleMode.setOnCheckedChangeListener { _, isChecked ->
             useColor = isChecked
             processedBitmap?.let {
@@ -45,6 +45,8 @@ class GrayScaleActivity : AppCompatActivity() {
                 binding.ivPreview.setImageBitmap(processedBitmap)
             }
         }
+
+        binding.btnSelectImage.setOnClickListener { pickImageLauncher.launch("image/*") }
         binding.btnNfcSend.setOnClickListener {
             val bmp = processedBitmap
             if (bmp == null) { Toast.makeText(this, "请先选择图片", Toast.LENGTH_SHORT).show(); return@setOnClickListener }
@@ -88,7 +90,8 @@ class GrayScaleActivity : AppCompatActivity() {
             } else { if (new > 128) Color.WHITE else Color.BLACK }
             out.setPixel(x, y, pixelColor)
         }
-        return out
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
     }
 
     private fun bitmapToBuffer(bmp: Bitmap, color: Boolean): ByteArray {
