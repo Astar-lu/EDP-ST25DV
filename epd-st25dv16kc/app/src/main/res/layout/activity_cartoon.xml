@@ -48,7 +48,7 @@
                 android:id="@+id/btnNfcSend"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="NFC下发ST25DV16KC"
+                android:text="NFC下发"
                 android:layout_marginTop="8dp" />
 
             <TextView
