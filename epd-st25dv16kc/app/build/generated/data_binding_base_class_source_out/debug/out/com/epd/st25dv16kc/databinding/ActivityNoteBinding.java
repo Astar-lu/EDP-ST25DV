@@ -24,7 +24,7 @@ public abstract class ActivityNoteBinding extends ViewDataBinding {
   public final Button btnNfcSend;
 
   @NonNull
-  public final EditText etNote;
+  public final EditText etInput;
 
   @NonNull
   public final ImageView ivPreview;
@@ -33,12 +33,12 @@ public abstract class ActivityNoteBinding extends ViewDataBinding {
   public final TextView tvStatus;
 
   protected ActivityNoteBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      Button btnGenerate, Button btnNfcSend, EditText etNote, ImageView ivPreview,
+      Button btnGenerate, Button btnNfcSend, EditText etInput, ImageView ivPreview,
       TextView tvStatus) {
     super(_bindingComponent, _root, _localFieldCount);
     this.btnGenerate = btnGenerate;
     this.btnNfcSend = btnNfcSend;
-    this.etNote = etNote;
+    this.etInput = etInput;
     this.ivPreview = ivPreview;
     this.tvStatus = tvStatus;
   }

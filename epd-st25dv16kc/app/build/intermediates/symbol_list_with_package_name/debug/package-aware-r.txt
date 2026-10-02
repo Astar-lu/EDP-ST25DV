@@ -3180,7 +3180,6 @@ id bounceBoth
 id bounceEnd
 id bounceStart
 id btnGenerate
-id btnMode
 id btnNfcSend
 id btnSelectImage
 id buttonPanel
@@ -3271,8 +3270,7 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
-id etNote
-id etQrText
+id etInput
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3561,6 +3559,7 @@ id title
 id titleDividerNoCustom
 id title_template
 id toggle
+id toggleMode
 id top
 id topPanel
 id touch_outside

@@ -4,10 +4,6 @@
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_qr_code.xml"
     },
     {
-        "merged": "com.epd.st25dv16kc.app-merged_res-35:/layout_activity_cartoon.xml.flat",
-        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_cartoon.xml"
-    },
-    {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-merged_res-35:/layout_activity_main.xml.flat",
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_main.xml"
     },
@@ -24,11 +20,27 @@
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
     },
     {
+        "merged": "com.epd.st25dv16kc.app-merged_res-35:/layout_activity_qr_code.xml.flat",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_qr_code.xml"
+    },
+    {
+        "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-merged_res-35:/layout_activity_cartoon.xml.flat",
+        "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_cartoon.xml"
+    },
+    {
+        "merged": "com.epd.st25dv16kc.app-merged_res-35:/layout_activity_note.xml.flat",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_note.xml"
+    },
+    {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-merged_res-35:/layout_activity_binary.xml.flat",
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_binary.xml"
     },
     {
         "merged": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-merged_res-35:/layout_activity_note.xml.flat",
         "source": "/home/codespace/.gradle/daemon/8.2/com.epd.st25dv16kc.app-main-37:/layout/activity_note.xml"
+    },
+    {
+        "merged": "com.epd.st25dv16kc.app-merged_res-35:/layout_activity_gray_scale.xml.flat",
+        "source": "com.epd.st25dv16kc.app-main-37:/layout/activity_gray_scale.xml"
     }
 ]

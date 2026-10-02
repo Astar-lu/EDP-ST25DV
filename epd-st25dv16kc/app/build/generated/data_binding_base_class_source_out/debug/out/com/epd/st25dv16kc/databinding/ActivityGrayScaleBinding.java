@@ -6,8 +6,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Switch;
 import android.widget.TextView;
-import android.widget.ToggleButton;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
@@ -18,9 +18,6 @@ import java.lang.Object;
 
 public abstract class ActivityGrayScaleBinding extends ViewDataBinding {
   @NonNull
-  public final ToggleButton btnMode;
-
-  @NonNull
   public final Button btnNfcSend;
 
   @NonNull
@@ -30,16 +27,19 @@ public abstract class ActivityGrayScaleBinding extends ViewDataBinding {
   public final ImageView ivPreview;
 
   @NonNull
+  public final Switch toggleMode;
+
+  @NonNull
   public final TextView tvStatus;
 
   protected ActivityGrayScaleBinding(Object _bindingComponent, View _root, int _localFieldCount,
-      ToggleButton btnMode, Button btnNfcSend, Button btnSelectImage, ImageView ivPreview,
+      Button btnNfcSend, Button btnSelectImage, ImageView ivPreview, Switch toggleMode,
       TextView tvStatus) {
     super(_bindingComponent, _root, _localFieldCount);
-    this.btnMode = btnMode;
     this.btnNfcSend = btnNfcSend;
     this.btnSelectImage = btnSelectImage;
     this.ivPreview = ivPreview;
+    this.toggleMode = toggleMode;
     this.tvStatus = tvStatus;
   }
 

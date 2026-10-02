@@ -3,60 +3,68 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <ScrollView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:padding="16dp"
+        tools:context=".GrayScaleActivity">
 
-        <LinearLayout
-            android:layout_width="match_parent"
+        <ImageView
+            android:id="@+id/ivPreview"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:scaleType="fitCenter"
+            android:background="#EEEEEE"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Switch
+            android:id="@+id/toggleMode"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp"
-            android:gravity="center_horizontal">
+            android:text="四色抖动(开)/黑白抖动(关)"
+            android:checked="true"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/ivPreview"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <ToggleButton
-                android:id="@+id/btnMode"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textOn="当前：黑白抖动"
-                android:textOff="当前：四色抖动"
-                android:checked="false" />
+        <Button
+            android:id="@+id/btnSelectImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择图片并模拟灰度"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/toggleMode"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <ImageView
-                android:id="@+id/ivPreview"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
-                android:scaleType="fitCenter"
-                android:background="#EEEEEE"
-                android:layout_marginTop="8dp" />
+        <Button
+            android:id="@+id/btnNfcSend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NFC下发ST25DV16KC"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnSelectImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <Button
-                android:id="@+id/btnSelectImage"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="选择图片并抖动转四色"
-                android:layout_marginTop="16dp" />
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:maxHeight="300dp"
+            android:scrollbars="vertical"
+            android:text="等待操作"
+            android:textSize="13sp"
+            android:fontFamily="monospace"
+            android:padding="8dp"
+            app:layout_constraintTop_toBottomOf="@id/btnNfcSend"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
-            <Button
-                android:id="@+id/btnNfcSend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="NFC下发ST25DV16KC"
-                android:layout_marginTop="8dp" />
-
-            <TextView
-                android:id="@+id/tvStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:maxHeight="250dp"
-                android:scrollbars="vertical"
-                android:text="等待操作"
-                android:textSize="13sp"
-                android:fontFamily="monospace"
-                android:padding="8dp"
-                android:layout_marginTop="8dp" />
-
-        </LinearLayout>
-    </ScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

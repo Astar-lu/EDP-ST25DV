@@ -14,15 +14,15 @@ public class ActivityQrCodeBindingImpl extends ActivityQrCodeBinding  {
     static {
         sIncludes = null;
         sViewsWithIds = new android.util.SparseIntArray();
-        sViewsWithIds.put(R.id.etQrText, 1);
-        sViewsWithIds.put(R.id.btnGenerate, 2);
-        sViewsWithIds.put(R.id.ivPreview, 3);
+        sViewsWithIds.put(R.id.ivPreview, 1);
+        sViewsWithIds.put(R.id.etInput, 2);
+        sViewsWithIds.put(R.id.btnGenerate, 3);
         sViewsWithIds.put(R.id.btnNfcSend, 4);
         sViewsWithIds.put(R.id.tvStatus, 5);
     }
     // views
     @NonNull
-    private final android.widget.ScrollView mboundView0;
+    private final androidx.constraintlayout.widget.ConstraintLayout mboundView0;
     // variables
     // values
     // listeners
@@ -33,13 +33,13 @@ public class ActivityQrCodeBindingImpl extends ActivityQrCodeBinding  {
     }
     private ActivityQrCodeBindingImpl(androidx.databinding.DataBindingComponent bindingComponent, View root, Object[] bindings) {
         super(bindingComponent, root, 0
-            , (android.widget.Button) bindings[2]
+            , (android.widget.Button) bindings[3]
             , (android.widget.Button) bindings[4]
-            , (android.widget.EditText) bindings[1]
-            , (android.widget.ImageView) bindings[3]
+            , (android.widget.EditText) bindings[2]
+            , (android.widget.ImageView) bindings[1]
             , (android.widget.TextView) bindings[5]
             );
-        this.mboundView0 = (android.widget.ScrollView) bindings[0];
+        this.mboundView0 = (androidx.constraintlayout.widget.ConstraintLayout) bindings[0];
         this.mboundView0.setTag(null);
         setRootTag(root);
         // listeners

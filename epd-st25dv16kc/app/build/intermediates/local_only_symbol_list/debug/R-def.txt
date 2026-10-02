@@ -8,7 +8,6 @@ color teal_200
 color teal_700
 color white
 id btnGenerate
-id btnMode
 id btnNfcSend
 id btnSelectImage
 id cardBinary
@@ -17,10 +16,10 @@ id cardFourGray
 id cardGray
 id cardNote
 id cardQr
-id etNote
-id etQrText
+id etInput
 id ivPreview
 id seekEdge
+id toggleMode
 id tvStatus
 layout activity_binary
 layout activity_cartoon
