@@ -62,8 +62,7 @@ class BinaryActivity : AppCompatActivity() {
             val gray = (Color.red(c) * 0.299 + Color.green(c) * 0.587 + Color.blue(c) * 0.114).toInt()
             out.setPixel(x, y, if (gray > 128) Color.WHITE else Color.BLACK)
         }
-        val flip = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
+        return out
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {

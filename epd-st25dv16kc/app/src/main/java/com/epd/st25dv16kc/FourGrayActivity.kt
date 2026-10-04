@@ -66,8 +66,7 @@ class FourGrayActivity : AppCompatActivity() {
                 gray > 220 -> Color.WHITE; gray > 160 -> Color.YELLOW; gray > 80 -> Color.RED; else -> Color.BLACK
             })
         }
-        val flip = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
+        return out
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {

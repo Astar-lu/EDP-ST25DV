@@ -59,8 +59,7 @@ class QrCodeActivity : AppCompatActivity() {
             bmp.setPixel(x, y, if (matrix[x, y]) Color.BLACK else Color.WHITE)
         }
         // 水平翻转修复墨水屏镜像
-        val flip = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(bmp, 0, 0, 200, 200, flip, true)
+        return bmp
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {

@@ -90,8 +90,7 @@ class GrayScaleActivity : AppCompatActivity() {
             } else { if (new > 128) Color.WHITE else Color.BLACK }
             out.setPixel(x, y, pixelColor)
         }
-        val flip = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
+        return out
     }
 
     private fun bitmapToBuffer(bmp: Bitmap, color: Boolean): ByteArray {

@@ -94,8 +94,7 @@ class CartoonActivity : AppCompatActivity() {
             }
             out.setPixel(x, y, color)
         }
-        val flip = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(out, 0, 0, 200, 200, flip, true)
+        return out
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {
