@@ -98,10 +98,12 @@ class CartoonActivity : AppCompatActivity() {
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        val f = Bitmap.createBitmap(bmp, 0, 0, 200, 200, flip, true)
         val buf = ByteArray(NfcSender.FRAME_TOTAL_BYTE)
         var idx = 0; var bit = 6
         for (y in 0 until 200) for (x in 0 until 200) {
-            val code = when (bmp.getPixel(x, y)) {
+            val code = when (f.getPixel(x, y)) {
                 Color.BLACK -> 0; Color.WHITE -> 1; Color.YELLOW -> 2; Color.RED -> 3; else -> 0
             }
             buf[idx] = (buf[idx].toInt() or (code shl bit)).toByte()

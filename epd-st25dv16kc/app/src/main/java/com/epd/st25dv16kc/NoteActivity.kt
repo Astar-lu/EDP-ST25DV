@@ -62,16 +62,16 @@ class NoteActivity : AppCompatActivity() {
             canvas.drawText(line, 5f, y, paint)
             y += 18f
         }
-        // 水平翻转修复墨水屏镜像
-        val matrix = Matrix().apply { preScale(-1f, 1f) }
-        return Bitmap.createBitmap(bmp, 0, 0, 200, 200, matrix, true)
+        return bmp
     }
 
     private fun bitmapToBuffer(bmp: Bitmap): ByteArray {
+        val flip = Matrix().apply { preScale(-1f, 1f) }
+        val f = Bitmap.createBitmap(bmp, 0, 0, 200, 200, flip, true)
         val buf = ByteArray(NfcSender.FRAME_TOTAL_BYTE)
         var idx = 0; var bit = 6
         for (y in 0 until 200) for (x in 0 until 200) {
-            val code = if (bmp.getPixel(x, y) == Color.BLACK) 0 else 1
+            val code = if (f.getPixel(x, y) == Color.BLACK) 0 else 1
             buf[idx] = (buf[idx].toInt() or (code shl bit)).toByte()
             bit -= 2; if (bit < 0) { bit = 6; idx++ }
         }
